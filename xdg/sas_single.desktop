@@ -1,0 +1,13 @@
+[Desktop Entry]
+Categories=Qt
+Encoding=UTF-8
+BinaryPattern=
+Name=SAS CPI-80 Single Output Control
+GenericName=Switcher Control
+Exec=sas_single
+Icon=saspanels
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
+

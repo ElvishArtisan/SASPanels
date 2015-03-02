@@ -1,0 +1,59 @@
+2006-01-25 Fred Gleason <fredg@salemradiolabs.com>
+	* Created new package from 'openusi'.
+2006-01-25 Fred Gleason <fredg@salemradiolabs.com>
+	* Updated the 'README' file.
+	* Updated the 'INSTALL' file.
+	* Added a 'saspanels.conf-sample' file.
+2006-01-25 Fred Gleason <fredg@salemradiolabs.com>
+	* Got the RPM build working.
+2006-02-07 Fred Gleason <fredg@salemradiolabs.com>
+	* Added a 'ButtonColor=' directive to the [Output<n>] section of
+	saspanels.conf(5).
+	* Added an USIConfig::buttonColor()' method in
+	'lib/usi_config.cpp'.
+	* Changed the size of Single Output widget to make it more
+	touchscreen-friendly.
+2006-02-08 Fred Gleason <fredg@salemradiolabs.com>
+	* Modified 'saspanels.spec.in' and 'make_slack.in' to use the
+	install paths provided by Autoconf.
+2006-02-09 Fred Gleason <fredg@salemradiolabs.com>
+	* Updated the 'INSTALL' file.
+	* Updated the package version to 0.6.0.
+2006-02-28 Fred Gleason <fredg@salemradiolabs.com>
+	* Modified the USIConnect class in 'lib/usi_connect.cpp' to use
+	the '^T' command variant to execute 'take' commands.
+2006-02-28 Fred Gleason <fredg@salemradiolabs.com>
+	* Added 'saspanels.pro', 'lib/lib.pro' and
+	'sas_single/sas_sing.pro' files.
+	* Fixed a bug in 'lib/usi_connect.cpp' that was causing the build
+	to break under Windows.
+	* Added icons in 'icons/saspanels.res',
+	'icons/saspanels-22x22.xpm' and 'icons/saspanels-32x32.xpm'.
+	* Incremented the package version to 0.6.1.
+2006-03-10 Fred Gleason <fredg@salemradiolabs.com>
+	* Added 'id3lib' and 'libFLAC' to the list of libraries linked
+	against.
+2006-03-16 Fred Gleason <fredg@salemradiolabs.com>
+	* Incremented the package version to 0.6.2.
+2006-03-05 Fred Gleason <fredg@salemradiolabs.com>
+	* Updated the e-mail address in the copyright notices.
+2008-09-02 Fred Gleason <fredg@paravelsystems.com>
+	* Integrated the 'RProfile', 'RProfileSection', 'RProfileLine' and
+	'RPushButton' classes in 'lib/'.
+	* Added the 'BNV_HAVE_QT', 'AR_GCC_TARGET' and 'AR_GET_DISTRO'
+	macros in 'acinclude.m4'.
+	* Added 'PACKAGE_VERSION' and 'build_win32.bat'.
+	* Added the 'helpers/' directory.
+2008-09-02 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.7.0.
+2009-05-14 Fred Gleason <fredg@paravelsystems.com>
+	* Adding missing #include declarations in 'lib/usi_output.cpp',
+	'lib/usi_cmdswitch.cpp' and 'sas_single/sas_single.cpp' that broke
+	the build on OpenSuSE 11.1.
+2009-05-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.7.1.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'id3lib' and 'libFLAC' from the list of libraries linked
+	against.
+2010-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.7.2.

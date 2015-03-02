@@ -1,0 +1,102 @@
+## saspanels.spec.in
+##
+##    The SASPanels Project
+##    Copyright (C) 2002-2006 Fred Gleason <fredg@paravelsystems.com>
+##
+##    This program is free software; you can redistribute it and/or modify
+##    it under the terms of version 2 of the GNU General Public License as
+##    published by the Free Software Foundation;
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program; if not, write to the Free Software
+##    Foundation, Inc., 59 Temple Place, Suite 330, 
+##    Boston, MA  02111-1307  USA
+##
+
+Summary: Control panels for Sierra Automated Systems audio routers
+Name: saspanels
+Version: @VERSION@
+Release: @RPM_RELEASE@
+License: GPL
+Group: Hardware/Other
+Source: ftp://ftp.salemradiolabs.com/pub/srlabs/saspanels/saspanels-@VERSION@.tar.gz
+BuildRoot: /var/tmp/saspanels-@VERSION@
+
+%description
+SASPanels is a utility that provides a computer-based simulation of a
+single output SAS control module (similar to that provided by a
+CPI-80), commonly used for controlling one of the audio router systems 
+manufactured by Sierra Automated Systems.  It uses SAS's 'Universal 
+Serial Interface' (USI) protocol to communicate with the central 
+routing matrix by means of TCP/IP connection over a network.  
+
+%prep
+%setup
+./configure --prefix=@LOCAL_PREFIX@
+
+%build
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+mkdir -p $RPM_BUILD_ROOT@LOCAL_PREFIX@/lib
+cp lib/.libs/libsaspanels-@VERSION@.so $RPM_BUILD_ROOT@LOCAL_PREFIX@/lib/
+ln -s @LOCAL_PREFIX@/lib/libsaspanels-@VERSION@.so $RPM_BUILD_ROOT@LOCAL_PREFIX@/lib/libsaspanels.so
+cp lib/.libs/libsaspanels.a $RPM_BUILD_ROOT@LOCAL_PREFIX@/lib/
+cp lib/.libs/libsaspanels.la $RPM_BUILD_ROOT@LOCAL_PREFIX@/lib/
+mkdir -p $RPM_BUILD_ROOT@LOCAL_PREFIX@/bin
+cp sas_single/.libs/sas_single $RPM_BUILD_ROOT@LOCAL_PREFIX@/bin/
+mkdir -p $RPM_BUILD_ROOT/etc
+cp saspanels.conf-sample $RPM_BUILD_ROOT/etc/saspanels.conf
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/16x16/apps
+cp icons/saspanels-16x16.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/16x16/apps/saspanels.xpm
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/22x22/apps
+cp icons/saspanels-22x22.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/22x22/apps/saspanels.xpm
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/32x32/apps
+cp icons/saspanels-32x32.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/32x32/apps/saspanels.xpm
+mkdir -p $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/48x48/apps
+cp icons/saspanels-48x48.xpm $RPM_BUILD_ROOT/opt/kde3/share/icons/hicolor/48x48/apps/saspanels.xpm
+mkdir -p $RPM_BUILD_ROOT/usr/share/applications
+cp xdg/sas_single.desktop $RPM_BUILD_ROOT/usr/share/applications/
+
+%post
+ldconfig
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root)
+%doc README 
+%doc INSTALL 
+%doc NEWS 
+%doc AUTHORS 
+%doc ChangeLog 
+%doc COPYING 
+%doc saspanels.conf-sample
+@LOCAL_PREFIX@/lib/libsaspanels-@VERSION@.so
+@LOCAL_PREFIX@/lib/libsaspanels.so
+@LOCAL_PREFIX@/lib/libsaspanels.a
+@LOCAL_PREFIX@/lib/libsaspanels.la
+@LOCAL_PREFIX@/bin/sas_single
+%config /etc/saspanels.conf
+/opt/kde3/share/icons/hicolor/16x16/apps/saspanels.xpm
+/opt/kde3/share/icons/hicolor/22x22/apps/saspanels.xpm
+/opt/kde3/share/icons/hicolor/32x32/apps/saspanels.xpm
+/opt/kde3/share/icons/hicolor/48x48/apps/saspanels.xpm
+/usr/share/applications/sas_single.desktop
+
+%changelog
+* Tue Feb 28 2006 Fred Gleason <fredg@salemradiolabs.com>
+-- Altered the install section so as not to use 'make install'.
+-- Altered install paths to use $prefix value from Autoconf.
+-- Added icons.
+* Wed Feb 08 2006 Fred Gleason <fredg@salemradiolabs.com>
+-- Altered install paths to use $prefix value from Autoconf.
+* Thu Jan 26 2006 Fred Gleason <fredg@salemradiolabs.com>
+- Initial RPM creation.

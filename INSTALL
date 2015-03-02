@@ -1,0 +1,36 @@
+This is the installation file for the SASPanels package.
+
+PREREQUISITES
+You will need the following installed and configured properly on your 
+system before building Rivendell:
+
+X11 Window System
+Virtually all Linux distros should include this.
+
+Qt Toolkit, v3.2 or better
+Most modern Linux distros include this.  It's typically installed as part
+of the KDE Desktop Environment, although KDE is by no means required.
+It can also be downloaded directly from TrollTech (http://www.trolltech.com/).
+
+The libradio Radio Library -- v0.96.0 or greater.
+This is a class library that contains much of the 'generic'
+functionality used by Rivendell (and other packages beside).  See
+ftp://ftp.salemradiolabs.com/pub/srlabs/libradio/.
+
+Once the prerquisites are satisfied, installation is largely a matter
+of doing the following in the top-level source directory:
+
+   ./configure
+   make
+   make install		(as root)
+
+Once installed, a usage message explaining the parameters that need to
+be supplied when invoking the program can be display by doing:
+
+   sas_single --help
+
+SASPanels also has the ability to restrict which router inputs are
+available for routing to a given output.  These restrictions are
+defined in the '/etc/saspanels.conf' file.  A sample of this file,
+containing instructions on it's format and use, is included in the
+SASPanels package.

@@ -1,0 +1,31 @@
+This is the README file for the SASPanels package.
+
+This software comes with ABSOLUTELY NO WARRANTY.  See the file COPYING for
+details.
+
+This software is BETA code.  As such, it is likely to contain bugs, 
+possibly serious ones.  Use with caution!
+
+SASPanels is a utility that provides a computer-based simulation of a
+single output SAS control module (similar to that provided by a
+CPI-80), commonly used for controlling one of the audio router systems 
+manufactured by Sierra Automated Systems.  It uses SAS's 'Universal 
+Serial Interface' (USI) protocol to communicate with the central 
+routing matrix by means of TCP/IP connection over a network.  
+Instructions for building and installing the program can be found in 
+the 'INSTALL' file.  For help in running the program, simply do:
+
+    sas_single --help
+
+after the program is installed.
+
+SASPanels also has the ability to restrict which router inputs are
+available for routing to a given output.  These restrictions are
+defined in the '/etc/saspanels.conf' file.  A sample of this file,
+containing instructions on it's format and use, is included in the
+SASPanels package.
+
+Good luck!
+
+
+Fred Gleason <fredg@paravelsystems.com>

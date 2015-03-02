@@ -1,0 +1,35 @@
+; saspanels.conf
+;
+; This is the sample configuration file for the SAS Panels package.
+;
+; (C) Copyright 2006 Fred Gleason <fredg@paravelsystems.com>
+;
+
+;
+; This file consists of sections, each starting with a statement of
+; the form '[Output<n>]' and then containing lines that either allow
+; or disallow display of a given input for output <n>.  Lines that
+; begin with a ';' are comments and hence ignored.
+;
+; Some examples will hopefully make this clear:
+;
+;
+; [Output1]
+; TakeButtonColor=black
+; DefaultAction=Allow
+; AllowInput3=No
+; AllowInput4=No
+;
+; The above example would display all available inputs for output 1
+; *except* inputs 3 and 4.
+;
+;
+; [Output1]
+; TakeButtonColor=red
+; DefaultAction=Deny
+; AllowInput3=No
+; AllowInput4=No
+;
+; This example would display *no* inputs *except* 3 and 4 for output
+; 1.  It also would color the TAKE button red.
+;
