@@ -256,7 +256,7 @@ void USIOutput::outputChangedData(unsigned output,
     return;
   }
   if(inputs->size()>1) {
-    fprintf(stderr,"%u inputs mapped to output\n",inputs->size());
+    fprintf(stderr,"%lu inputs mapped to output\n",inputs->size());
     return;
   }
   if(inputs->size()==0) {   // Output Off

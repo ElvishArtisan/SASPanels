@@ -29,7 +29,7 @@
 class USICmdSwitch
 {
  public:
-  USICmdSwitch(int argc,char *argv[],char *modname,char *usage);
+  USICmdSwitch(int argc,char *argv[],const char *modname,const char *usage);
   unsigned keys() const;
   QString key(unsigned n) const;
   QString value(unsigned n) const;
