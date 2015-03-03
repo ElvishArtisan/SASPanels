@@ -23,9 +23,8 @@
 ##   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ##
 
-AM_CPPFLAGS = -Wall -DQTDIR=\"@QT_DIR@\" @QT_CXXFLAGS@
+AM_CPPFLAGS = -Wall -DQTDIR=\"@QT_DIR@\" @QT_CXXFLAGS@ -I$(QTDIR)/include -I../lib
 LIBS = @QT_LIBS@ -L$(QTDIR)/lib -L../lib
-INCLUDES = -I$(QTDIR)/include -I../lib
 MOC = @QT_MOC@
 
 # The dependency for qt's Meta Object Compiler (moc)

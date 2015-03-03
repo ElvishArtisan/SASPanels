@@ -21,7 +21,15 @@
 ##   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ##
 
-SUBDIRS = lib sas_single icons xdg
+SUBDIRS = lib\
+          icons\
+          sas_single\
+          xdg
+
+ACLOCAL_AMFLAGS = -I m4
+
+maintainer-clean-local:	
+	rm -rf m4
 
 rpm:	dist
 	cp saspanels-$(VERSION).tar.gz $(RPM_ROOT)/SOURCES/

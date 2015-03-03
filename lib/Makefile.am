@@ -21,8 +21,7 @@
 ##   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ##
 
-AM_CPPFLAGS = -Wall
-INCLUDES = -I$(QTDIR)/include
+AM_CPPFLAGS = -Wall -I$(QTDIR)/include
 MOC = $(QTDIR)/bin/moc
 
 # QT's Meta Object Compiler (moc)

@@ -57,3 +57,7 @@
 	against.
 2010-01-05 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.7.2.
+2015-03-02 Fred Gleason <fredg@paravelsystems.com>
+	* Moved 'configure.in' to 'configure.ac'.
+	* Modernized autotools invocation in 'configure.ac' and 'Makefile.am'.
+	* Updated 'get_distro.sh' and 'get_target.sh'.
