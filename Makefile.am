@@ -32,12 +32,12 @@ maintainer-clean-local:
 	rm -rf m4
 
 rpm:	dist
-	cp saspanels-$(VERSION).tar.gz $(RPM_ROOT)/SOURCES/
-	$(RPMBUILD) -ba --target i586-$(VENDOR)-linux saspanels.spec
-	mv $(RPM_ROOT)/RPMS/i586/saspanels-$(VERSION)-@RPM_RELEASE@.i586.rpm $(top_srcdir)/
-	mv $(RPM_ROOT)/SRPMS/saspanels-$(VERSION)-@RPM_RELEASE@.src.rpm $(top_srcdir)/
-	rm $(RPM_ROOT)/SOURCES/saspanels-$(VERSION).tar.gz
-	rm -rf $(RPM_ROOT)/BUILD/saspanels-$(VERSION)
+	mkdir -p $(HOME)/rpmbuild/SOURCES
+	cp saspanels-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
+	$(RPMBUILD) -ba --target $(ARCH)-$(VENDOR)-linux saspanels.spec
+	mv $(HOME)/rpmbuild/RPMS/$(ARCH)/saspanels-*.rpm $(top_srcdir)/
+	mv $(HOME)/rpmbuild/SRPMS/saspanels-*.src.rpm $(top_srcdir)/
+	rm $(HOME)/rpmbuild/SOURCES/saspanels-$(VERSION).tar.gz
 
 zip:	dist
 	tar -zxf saspanels-@VERSION@.tar.gz

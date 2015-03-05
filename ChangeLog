@@ -67,3 +67,6 @@
 2015-03-05 Fred Gleason <fredg@paravelsystems.com>
 	* Updated the USIConnect driver in 'lib/usi_connect.cpp' to use
 	four digit crosspoint change commands.
+2015-03-05 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the 'make rpm' target in 'Makefile.am' to use in-home
+	directory RPM build directories.
