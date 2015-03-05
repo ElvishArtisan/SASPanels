@@ -64,3 +64,6 @@
 2015-03-02 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed warnings in 'lib/usi_output.cpp', 'lib/usi_cmdswitch.cpp' and
 	'lib/usi_cmdswitch.h'.
+2015-03-05 Fred Gleason <fredg@paravelsystems.com>
+	* Updated the USIConnect driver in 'lib/usi_connect.cpp' to use
+	four digit crosspoint change commands.

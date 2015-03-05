@@ -2,7 +2,7 @@
 //
 // A connection driver for USI devices.
 //
-//   (C) Copyright 2002-2005 Fred Gleason <fredg@paravelsystems.com>
+//   (C) Copyright 2002-2005,2015 Fred Gleason <fredg@paravelsystems.com>
 //
 //   This program is free software; you can redistribute it and/or modify
 //   it under the terms of the GNU General Public License as
@@ -150,7 +150,8 @@ void USIConnect::switchCrosspoint(unsigned input,unsigned output,int gain,
   QString str;
   switch(action) {
       case USIConnect::Take:
-	str=QString().sprintf("%c%03d%03d\x0D\x0A",20,input,output);
+	//str=QString().sprintf("%c%03d%03d\x0D\x0A",20,input,output);
+	str=QString().sprintf("%cT%04d%04d\x0D\x0A",5,input,output);
 	break;
 
       case USIConnect::Sum:
