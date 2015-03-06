@@ -160,6 +160,7 @@ void USIConnect::switchCrosspoint(unsigned input,unsigned output,int gain,
       default:
 	break;
   }
+  //  printf("OUT: ^E%s\n",(const char *)str.right(str.length()-1));
   usi_socket->writeBlock(str,str.length());
   queryOutput(output);
 }
@@ -245,6 +246,7 @@ void USIConnect::DispatchCommand()
     }
   }
 
+  //  printf("IN: %s\n",usi_buffer);
   switch(usi_buffer[0]) {
       case 21:   // Input Name [^U]
 	if(strlen(usi_buffer)<13) {
@@ -288,6 +290,7 @@ void USIConnect::DispatchCommand()
 	break;
 
       case 'T':  // Channel Tally
+      case 'C':
 	for(unsigned i=1;i<strlen(usi_buffer);i++) {
 	  if(usi_buffer[i]==':') {
 	    usi_buffer[i]=0;

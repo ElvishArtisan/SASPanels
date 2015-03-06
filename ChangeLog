@@ -70,3 +70,5 @@
 2015-03-05 Fred Gleason <fredg@paravelsystems.com>
 	* Modified the 'make rpm' target in 'Makefile.am' to use in-home
 	directory RPM build directories.
+2015-03-05 Fred Gleason <fredg@paravelsystems.com>
+	* Modified 'lib/usi_connect.cpp' to use four-digit inputs numbers.
